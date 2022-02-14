@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head::head(title='patient.add')">
+</head>
+<body>
+<header th:replace="fragments/header :: header(current='add-patient')"></header>
+<main>
+<div class="container-lg">
+    <h2>Add Patient</h2>
+            <form method="post" action="/add" th:object="${patient}">
+                    <p class="mb-3">
+                        <label for="name" class="col-form-label">Name</label>
+                        <input type="text" th:field="*{name}" id="name" placeholder="Name" class="form-control col-sm-5">
+                        <span th:each="error:${#fields.errors('name')}" th:text="#{${error}}" class="text-danger"></span>
+                    </p>
+                    <p class="mb-3">
+                        <label for="email" class="col-form-label">Email</label>
+                        <input type="text" th:field="*{email}" id="email" placeholder="Email" class="form-control col-sm-5">
+                        <span th:each="error:${#fields.errors('email')}" th:text="#{${error}}" class="text-danger"></span>
+                    </p>
+                <p class="mb-3">
+                    <label for="age" class="col-form-label">Age</label>
+                    <input type="text" th:field="*{age}" id="age" placeholder="Age" class="form-control col-sm-5">
+                    <span th:each="error:${#fields.errors('age')}" th:text="#{${error}}" class="text-danger"></span>
+                </p>
+                <p>
+                    <input type="submit" value="Add Patient" class="btn btn-primary">
+                    </p>
+            </form>
+</div>
+</main>
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a href="/overview" class="navbar-brand" th:text="#{patient.overview}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"
+                    th:classappend="${current == 'overview-patient' ? 'active' : ''}">
+                    <a class="nav-link" href="/overview" th:text="#{patient.overview}"></a>
+                </li>
+                <li class="nav-item"
+                    th:classappend="${current == 'add-patient' ? 'active' : ''}">
+                    <a class="nav-link" href="/add" th:text="#{patient.add}"></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+</body>
+</html>
