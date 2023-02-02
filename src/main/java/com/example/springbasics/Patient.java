@@ -1,9 +1,11 @@
 package com.example.springbasics;
 
-import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
+import jakarta.persistence.Entity;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "patient")
@@ -19,8 +21,6 @@ public class Patient {
     @NotBlank(message = "email.missing")
     @Email(message = "email.not.valid")
     private String email;
-
-
     private int age;
 
     public int getAge() {
