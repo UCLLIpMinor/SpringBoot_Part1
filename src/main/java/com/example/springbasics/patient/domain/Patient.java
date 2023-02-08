@@ -1,11 +1,6 @@
-package com.example.springbasics;
-
-import jakarta.persistence.Entity;
+package com.example.springbasics.patient.domain;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "patient")
@@ -15,21 +10,12 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank(message = "name.missing")
+    @Column(name = "my_name")
     private String name;
 
-    @NotBlank(message = "email.missing")
-    @Email(message = "email.not.valid")
     private String email;
+
     private int age;
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public long getId() {
         return id;
@@ -53,5 +39,13 @@ public class Patient {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

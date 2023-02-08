@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head::head(title='home')">
+<head th:replace="~{fragments/head::head(title='home')}">
 </head>
 <body>
-<header th:replace="fragments/header :: header(current='index')"></header>
+<header th:replace="~{fragments/header :: header(current='index')}"></header>
 <main>
 <h2 class="container-lg">Welcome ...</h2>
 </main>

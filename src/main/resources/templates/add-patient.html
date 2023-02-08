@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head::head(title='patient.add')">
+<head th:replace="~{fragments/head::head(title='patient.add')}">
 </head>
 <body>
-<header th:replace="fragments/header :: header(current='add-patient')"></header>
+<header th:replace="~{fragments/header :: header(current='add-patient')}"></header>
 <main>
 <div class="container-lg">
     <h2>Add Patient</h2>
-            <form method="post" action="/add" th:object="${patient}">
+            <form method="post" action="/add" th:object="${patientDto}">
                     <p class="mb-3">
                         <label for="name" class="col-form-label">Name</label>
                         <input type="text" th:field="*{name}" id="name" placeholder="Name" class="form-control col-sm-5">

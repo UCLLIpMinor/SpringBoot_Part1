@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head::head(title='patient.overview')">
+<head th:replace="~{fragments/head::head(title='patient.overview')}">
 </head>
 <body>
-<header th:replace="fragments/header :: header(current='overview-patient')"></header>
+<header th:replace="~{fragments/header :: header(current='overview-patient')}"></header>
 <main>
     <div th:switch="${patients}" class="container-lg">
         <h2 th:case="null">No patients yet!</h2>

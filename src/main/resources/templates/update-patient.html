@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head::head(title='patient.update')">
+<head th:replace="~{fragments/head::head(title='patient.update')}">
 </head>
 <body>
-<header th:replace="fragments/header :: header(current='update-patient')"></header>
+<header th:replace="~{fragments/header :: header(current='update-patient')}"></header>
 <main>
 <div class="container-lg">
     <h2>Update Patient</h2>
@@ -11,7 +11,7 @@
         <span th:text="${error}"></span>
     </div>
     <div th:if="${error}==null">
-            <form action="#" th:action="@{/update/{id}(id=${patient.id})}" th:object="${patient}" method="post">
+            <form action="#" th:action="@{/update/{id}(id=${patientDto.id})}" th:object="${patientDto}" method="post">
                 <p class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" th:field="*{name}" id="name" placeholder="Name" class="form-control col-sm-5">
